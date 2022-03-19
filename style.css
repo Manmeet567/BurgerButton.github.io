@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: aqua;
+}
+body{
+  text-align: center;
+}
+nav {
+  width: 800px;
+  margin: 0 auto;
+  position: sticky;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+.menu-toggler {                   
+  background: none;
+  display: none;
+  position: relative;
+  outline: none;
+  width: 30px;
+  border: none;
+  margin: 5px 10px;
+  z-index: 2;
+}
+/* .menu-toggler {
+  background: none;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  z-index: 999;
+  display: none;
+} */
+.menu-toggler span {
+    display: block;
+    height: 3px;
+    background-color: rgb(2, 126, 126);
+    margin: 6px 0;
+    position: relative;
+    transition: 0.3s linear
+}
+/* .menu-toggler span {
+  display: block;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  position: relative;
+  transition: 0.3s linear;
+}
+ */
+.menu h2 {
+  font-size: 30px;
+}
+.navbar-menu {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.navbar-menu li {
+  font-size: 28px;
+  margin: 0 10px;
+  padding: 0px 10px;
+}
+@media screen and (max-width: 810px) {
+  nav {
+    width: 500px;
+  }
+  .menu-toggler {
+    display: block;
+  }
+  .navbar-menu {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #353b48;
+    top: 0;
+    right: -100%;
+    display: block;
+    max-width: 400px;
+    padding: 80px 50px;
+    transition: 0.3s linear;
+  }
+
+  .navbar-menu li {
+    display: block;
+    font-size: 30px;
+    margin: 30px 0;
+    background-color: #353b48;
+    color: #fff;
+  }
+
+  .navbar-menu.active {
+    right: 0;
+  }
+
+  .menu-toggler.active span:nth-child(1) {
+    transform: rotate(-225deg);
+    top: 4px;
+  }
+
+  .menu-toggler.active span:nth-child(2) {
+    transform: rotate(225deg);
+    top: -4px;
+  }
+  .menu-toggler.active span:nth-child(3) {
+    opacity: 0;
+  }
+}
